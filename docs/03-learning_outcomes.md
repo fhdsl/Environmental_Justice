@@ -62,27 +62,26 @@ Never have made a map before
 
 ### Tier 1: 
 
-Explain how environmental data science tools reflect our understandings of race and can both perpetuate and challenge racism 
-Interpret maps
-Expand understanding of maps (through resources like this counter mapping project and memory maps)
-Navigate the EJScreen tool and/or other similar tools to answer relevant, student-generated research questions about environmental (in)justice
-Understand how these can benefit their own community and neighborhood 
+- Explain how environmental data science tools reflect our understandings of race and can both perpetuate and challenge racism 
+- Interpret maps
+- Expand understanding of maps (through resources like this counter mapping project and memory maps)
+- Navigate the EJScreen tool and/or other similar tools to answer relevant, student-generated research questions about environmental (in)justice
+- Understand how these can benefit their own community and neighborhood 
 
 ### Tier 2:
 
-Involve in ethnographic studies 
-Be able to infer data with a broad socio-economic context
-Visualization of data using programming languages such as R
-Dig into the 
-Maybe tie-up with different environmental law firms to get a hands-on learning experience by interning/volunteering!
-Be able to come up with concept maps to project a boarder relationship with different interactions
-Think of gathering qualitative data through interviews and surveys that are based around ethics 
+- Involve in ethnographic studies 
+- Be able to infer data with a broad socio-economic context
+- Visualization of data using programming languages such as R
+- Maybe tie-up with different environmental law firms to get a hands-on learning experience by interning/volunteering!
+- Be able to come up with concept maps to project a boarder relationship with different interactions
+- Think of gathering qualitative data through interviews and surveys that are based around ethics 
 
 ### Tier 3: 
 
-Placement opportunities for students interested in continuing this field of science 
-Introduce public health implications of the data and research?
-Discuss data ethics? 
+- Placement opportunities for students interested in continuing this field of science 
+- Introduce public health implications of the data and research?
+- Discuss data ethics? 
 
 ## Socially Engaged Art:
 
