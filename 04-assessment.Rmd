@@ -1,7 +1,7 @@
 
 # Assessment
 
-## Student assessment (Jazzmine): 
+## Student Assessment: 
 
 ### Tier 1
 
