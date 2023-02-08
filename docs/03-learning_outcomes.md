@@ -3,7 +3,7 @@
 
 When students complete this module, they will be able to:
 
-## Science/Data Science (?)
+## Science/Data Science
 
 ### Overarching LOs - to be applied at all tiers
 
@@ -68,7 +68,7 @@ Expand understanding of maps (through resources like this counter mapping projec
 Navigate the EJScreen tool and/or other similar tools to answer relevant, student-generated research questions about environmental (in)justice
 Understand how these can benefit their own community and neighborhood 
 
-### Tier 2: [Vaasuki. ]
+### Tier 2:
 
 Involve in ethnographic studies 
 Be able to infer data with a broad socio-economic context
@@ -84,7 +84,7 @@ Placement opportunities for students interested in continuing this field of scie
 Introduce public health implications of the data and research?
 Discuss data ethics? 
 
-## Socially Engaged Art: (Maria Park, Maria Castillo)
+## Socially Engaged Art:
 
 Geared towards students who
 
@@ -94,29 +94,30 @@ Geared towards students who
 ### Tier 1: communication (2-3 weeks)
 
 *Tier objective* : introduce students to science communication, socially engaged art, and research translation with hands-on activities between students and with the general public
-Students read foundational literature on the history of socially engaged art practices, and how science, art, and agency are tied together.
-Students create a representation of the results from the Data Science and Social Science subjects that can be shared with classmates and the broader community
-Representations could take the form of ArcGIS StoryMaps, collage, art installation, composition, art/dance/theater performance, a poster, presentation, etc.
-Do a site visit with students and teachers to see the EJ community first-hand and learn from locals (example: Dakota Bdote tour)
+
+- Students read foundational literature on the history of socially engaged art practices, and how science, art, and agency are tied together.
+- Students create a representation of the results from the Data Science and Social Science subjects that can be shared with classmates and the broader community
+- Representations could take the form of ArcGIS StoryMaps, collage, art installation, composition, art/dance/theater performance, a poster, presentation, etc.
+- Do a site visit with students and teachers to see the EJ community first-hand and learn from locals (example: Dakota Bdote tour)
 Class creates a gallery show and/or hosts an event to share creative works with each other and community members.
 
 ### Tier 2: storytelling (2 weeks)
 
 *Tier objective* : Students and community members come to a more holistic understanding of the different experiences and perspectives related to environmental justice, for example of how personal experiences are part of  shared experiences or a larger picture
 
-Organize a gathering of students and residents with different breadths of traditional and ancestral knowledge like teachers and Indigenous leaders.
-Storytelling preparation:
-Hold a reflection session (individually or in groups) and a writing workshop to be able to put ideas and thoughts into words more effectively
-Run a storytelling workshop for students to practice telling and listening to stories
-Facilitate an organic sharing and listening of stories between students and community members related to environmental justice from embodied experiences, research, data analysis
+- Organize a gathering of students and residents with different breadths of traditional and ancestral knowledge like teachers and Indigenous leaders.
+- Storytelling preparation:
+    - Hold a reflection session (individually or in groups) and a writing workshop to be able to put ideas and thoughts into words more effectively
+    - Run a storytelling workshop for students to practice telling and listening to stories
+- Facilitate an organic sharing and listening of stories between students and community members related to environmental justice from embodied experiences, research, data analysis
 
 ### Tier 3: co-creation of knowledge (longterm, multi-year)
 
 *Tier objective*: Build and sustain healthy relationships between students, local stakeholders, and Indigenous leaders. Over time, co-create a collective understanding of the root causes of environmental justice issues in the local community, brainstorm ways to sustainably address these issues, and empower the community to tackle these issues.
 
-Enable communication channels for continued support between students and residents, knowledge exchange and future collaborations.
-Engage students and community members in regular meetups and activities to develop a community of students engaged in environmental justice
-Support participants (students and community members) through funding sources
-Secure funding for a competition for participants to propose a new or an extension to an existing EJ project that the winning team can work on for a year. 
+- Enable communication channels for continued support between students and residents, knowledge exchange and future collaborations.
+- Engage students and community members in regular meetups and activities to develop a community of students engaged in environmental justice
+- Support participants (students and community members) through funding sources
+- Secure funding for a competition for participants to propose a new or an extension to an existing EJ project that the winning team can work on for a year. 
 
 Multi-lingual: https://www.enlightenment.org/develop/legacy/program_guide/multilingual_pg 
