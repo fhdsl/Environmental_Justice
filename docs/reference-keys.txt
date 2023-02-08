@@ -1,6 +1,7 @@
-introduction
-motivation
 target-audience
-curriculum
-chapter-2-xyz
+guide-for-instructors
+learning-outcomes
+assessment
+chapter
+chapter-1
 references

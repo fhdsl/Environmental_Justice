@@ -1,5 +1,5 @@
 ---
-title: "Course Name"
+title: "Introduction to Environmental Justice"
 date: "February, 2023"
 site: bookdown::bookdown_site
 documentclass: book
@@ -8,7 +8,7 @@ biblio-style: apalike
 link-citations: yes
 description: "Description about Course/Book."
 output:
-    bookdown::word_document2:
+    bookdown::word_document2:   
       toc: true
 ---
 
