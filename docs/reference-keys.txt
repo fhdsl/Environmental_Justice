@@ -4,4 +4,3 @@ learning-outcomes
 assessment
 chapter
 chapter-1
-references
