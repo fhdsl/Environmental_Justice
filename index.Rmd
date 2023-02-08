@@ -12,7 +12,7 @@ output:
       toc: true
 ---
 
-# About this Course {-}
+# About this Module {-}
 
 This is a collection of modules intended to teach students about environmental justice through the [EPA's EJ Screen tool](https://www.epa.gov/ejscreen).
 
