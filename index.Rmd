@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Environmental Justice"
+title: "Introduction to Environmental Justice using EJ Screen"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -13,5 +13,7 @@ output:
 ---
 
 # About this Course {-}
+
+This is a collection of modules intended to teach students about environmental justice through the [EPA's EJ Screen tool](https://www.epa.gov/ejscreen).
 
 ![](assets/ej_screen.png)
