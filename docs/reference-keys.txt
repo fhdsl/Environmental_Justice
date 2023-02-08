@@ -14,3 +14,4 @@ student-assessment
 assessment-evolution-of-the-module-itself
 introduction
 introduction-1
+activity
