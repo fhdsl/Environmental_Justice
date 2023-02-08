@@ -14,3 +14,4 @@ output:
 
 # About this Course {-}
 
+![](assets/ej_screen.png)
