@@ -16,4 +16,6 @@ output:
 
 This is a collection of modules intended to teach students about environmental justice through the [EPA's EJ Screen tool](https://www.epa.gov/ejscreen).
 
+These modules use a three-tiered system to educate across experience levels.
+
 ![](assets/ej_screen.png)
