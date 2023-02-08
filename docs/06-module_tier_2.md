@@ -8,6 +8,12 @@ We will import the data source used to make the  wastewater index that is part o
 
 # Activity
 
+Looking at the EJ Screen website, wastewater discharge is an EJ factor in many Southern California regions.
+
+We can dive into the data and look at the content of the wastewater in two different rural counties: Riverside and Imperial
+
+![](assets/ca_wastewater.png)
+
 
 ```r
 library(ggplot2)
