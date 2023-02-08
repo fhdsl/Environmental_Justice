@@ -1,5 +1,5 @@
 ---
-title: "Course Name"
+title: "Introduction to Environmental Justice"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -9,7 +9,7 @@ link-citations: yes
 description: "Description about Course/Book."
 favicon: assets/dasl_favicon.ico
 output:
-    bookdown::word_document2:
+    bookdown::word_document2:   
       toc: true
 ---
 

@@ -1,5 +1,6 @@
+# (PART\*) Module - Tier 2 {-}
 
-# Chapter 2: xyz
+# Chapter
 
 If you haven't yet read the getting started Wiki pages; [start there](https://www.ottrproject.org/getting_started.html).
 
