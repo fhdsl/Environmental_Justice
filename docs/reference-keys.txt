@@ -1,10 +1,9 @@
 target-audience
 guide-for-instructors
-learning-outcomes
-pre-requisite-kno
+learning-outcomes-by-subject
 sciencedata-science
+overarching-los---to-be-applied-at-all-tiers
 tier-1-intro-level
-tier-2-mid-level
 tier-3-upper-division
 social-science
 tier-1
