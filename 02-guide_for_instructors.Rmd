@@ -1,7 +1,7 @@
 
 # Guide for Instructors
 
-Tier 1
+## Tier 1
 
 Why are we doing this? Value of:
 Env Justice exploration
@@ -12,13 +12,13 @@ How to empathetically approach environmental justice issues
 Data Science ethics (and a slide for them to use in their courses?)
 Guide for assessing student learning
 
-Tier 2
+## Tier 2
 
 Video tutorial with associated R code
 Also a pdf (R Markdown) guide to follow
 Guide for assessing student learning
 
-Tier 3
+## Tier 3
 
 Best-practices for guiding/managing student independent projects and assessing students equitably
 Guide for assessing student learning
