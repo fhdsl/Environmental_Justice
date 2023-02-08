@@ -5,5 +5,11 @@ ottrpal::set_knitr_image_path()
 
 # Target Audience
 
-This module is made to provide opportunities for students, especially underserved and minority students, at higher education facilities to explore and critically think about environmental justice data using EJScreen and other tools. It targets the lower division level (undergraduate) students, across a variety of disciplines (e.g., biology, social science). "Marketing" could focus on HBCUs, historically-women’s colleges, community colleges, etc. But, it is open to anyone and should be adaptable for that purpose. 
+This module is made to provide opportunities for students, especially underserved and minority students, at higher education facilities to explore and critically think about environmental justice data using EJScreen and other tools. We intend this module to be interdiscplinary / discipline agnostic, so that students of multiple disciplines and majors can participate. 
+
+It targets the lower division level (undergraduate) students, across a variety of disciplines (e.g., biology, social science) at Tier 1.
+
+Tiers 2 and 3 will target more advanced students, potentially graduate students or students completing a research capstone.
+
+"Marketing" could focus on HBCUs, historically-women’s colleges, community colleges, etc. But, it is open to anyone and should be adaptable for that purpose. 
 
