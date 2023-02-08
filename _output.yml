@@ -8,7 +8,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-       <a href="" target="_blank"><img src="assets/EDSS.png" style="width: 80%; padding-left: 34px; padding-top: 8px;"</a>
+       <a href="" target="_blank"><img src="https://raw.githubusercontent.com/fhdsl/Environmental_Justice/main/assets/EDSS.jpg" style="width: 80%; padding-left: 34px; padding-top: 8px;"</a>
       after: |
        <p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by:</a> </p>
        <p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
