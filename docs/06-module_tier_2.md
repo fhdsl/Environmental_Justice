@@ -14,6 +14,12 @@ We can dive into the data and look at the content of the wastewater in two diffe
 
 ![](assets/ca_wastewater.png)
 
+We find that the chemical composition is very different! These are also counties with large amounts of agricultural run-off, but these are not accounted for in this database. The nitrate wastewater runoff in Imperial county is from the US Navy.
+
+![](assets/imperial.png)
+
+![](assets/riverside.png)
+
 
 ```r
 library(ggplot2)
