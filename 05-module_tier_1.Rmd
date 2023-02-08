@@ -7,3 +7,5 @@ When organizations/governments need to make decisions that impact communities, t
 We are going to show you one tool that people use to make decisions that can impact your community, EJ Screen. EJ Screen is an environmental justice screening and mapping tool.
 
 First, let's take a look at the [EJ Screen](https://ejscreen.epa.gov/) website. Spend a few minutes poking around the site: What data are available? How are they represented?
+
+![](assets/ej_screen.png)
