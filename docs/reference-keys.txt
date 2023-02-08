@@ -1,6 +1,17 @@
 target-audience
 guide-for-instructors
 learning-outcomes
+pre-requisite-kno
+sciencedata-science
+tier-1-intro-level
+tier-2-mid-level
+tier-3-upper-division
+social-science
+tier-1
+tier-2
+tier-3
 assessment
+student-assessment
+assessment-evolution-of-the-module-itself
 chapter
 chapter-1
