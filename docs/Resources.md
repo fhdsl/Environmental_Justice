@@ -1,0 +1,4 @@
+
+# Resources {-}
+
+- [ejscreen R package?](http://ejanalysis.github.io/ejscreen/)
