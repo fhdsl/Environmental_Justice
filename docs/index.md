@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Environmental Justice"
+title: "Introduction to Environmental Justice using EJ Screen"
 date: "February, 2023"
 site: bookdown::bookdown_site
 documentclass: book
@@ -13,5 +13,9 @@ output:
 ---
 
 # About this Course {-}
+
+This is a collection of modules intended to teach students about environmental justice through the [EPA's EJ Screen tool](https://www.epa.gov/ejscreen).
+
+These modules use a three-tiered system to educate across experience levels.
 
 ![](assets/ej_screen.png)
