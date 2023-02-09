@@ -24,7 +24,8 @@ When students complete this module, they will be able to:
 - Understand how weighting can impact results
 - Question policy-makers and land managers on environmental justice issues
 - Collaboratively develop action plans to move forward from their findings (wording of this sentence?) 
-- Tier 2 (Mid level)
+
+### Tier 2 (Mid level)
 
 *Prerequisite Knowledge: Basic introduction to data science and statistical analyses, e.g. *
 
