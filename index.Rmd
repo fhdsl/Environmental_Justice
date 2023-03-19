@@ -1,5 +1,6 @@
 ---
-title: "Introduction to Environmental Justice using EJ Screen"
+title: "Data for Environmental Justice (D4ej)"
+subtitle: "Tiered modules for introducing environmentally and socially conscious data science"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -12,10 +13,10 @@ output:
       toc: true
 ---
 
-# About this Module {-}
+# About These Modules {-}
 
 This is a collection of modules intended to teach students about environmental justice through the [EPA's EJ Screen tool](https://www.epa.gov/ejscreen).
 
-These modules use a three-tiered system to educate across experience levels.
+These modules use a three-tiered system to educate across experience levels. Modules are also broken up by the intended audience: data science and/or STEM majors, social science majors, and those participating in socially engaged arts learning.
 
 ![](assets/ej_screen.png)
