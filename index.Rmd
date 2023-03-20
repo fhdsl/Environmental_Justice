@@ -1,5 +1,5 @@
 ---
-title: "Data for Environmental Justice (D4ej)"
+title: "Data for Environmental Justice (d4ej)"
 subtitle: "Tiered modules for introducing environmentally and socially conscious data science"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
