@@ -1,0 +1,86 @@
+---
+title: "Untitled"
+author: "Evan T. Heberlein"
+date: '2023-06-05'
+output: html_document
+---
+
+---
+title: "Census API"
+author: "Evan T. Heberlein"
+date: '2023-06-05'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Census API interface for EJ Screen module
+This script pulls EJ Screen data from the [EPA API](https://ejscreen.epa.gov/mapper/ejscreenapi.html):
+Data is downloaded by census block group, the smallest areal unit supported by EJ Screen
+
+Here are the [EJ Screen field descriptions](https://ejscreen.epa.gov/mapper/ejsoefielddesc.html) for the data we'll download.
+
+[Here is the definition](https://www.census.gov/programs-surveys/geography/about/glossary.html#par_textimage_4) of block groups from the U.S. Census glossary.
+
+[Here is an interesting article](https://theconversation.com/how-zip-codes-nearly-masked-the-lead-problem-in-flint-65626#:~:text=ZIPs%2048504%2C%2048505%2C%2048506%20and,of%20Flint%20and%20outlying%20municipalities) on why block groups are more useful than areal units like zip codes.
+
+If you really want to work with zip codes [here is some census info](https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html) on how to do that. 
+
+---------------------------------------------------------------------------
+The following packages are necessary to run this script:
+
+```{r echo=TRUE}
+# Use install.packages('packagename') if you need to install packages
+library('censusxy')
+library('jsonlite')
+library('tidyverse')
+```
+
+Edit these fields to pull data for an address of interest:
+```{r echo=TRUE}
+street = "1111 E Cabrillo Blvd." # street name & number, string
+city = "Santa Barbara" # string
+statecode = "CA" # two-letter code, string
+zipcode = 93101 # five-digit code, integer
+```
+
+The following code finds the FIPS code for the block group in which the above address is located using functions from censusxy:
+```{r echo=TRUE}
+address = censusxy::cxy_single(street, city, statecode, zipcode) # Census format for address
+lon = address['coordinates.x'] # Census block group longitude
+lat = address['coordinates.y'] # Census block group latitude
+
+geogs = censusxy::cxy_geography(lon, lat) # Geographies for census block group
+tract_geo = geogs['Census.Tracts.GEOID'] # Census tract num.
+tract_str = levels(tract_geo$Census.Tracts.GEOID) # Convert num. to string
+blkgrp_geo = geogs['X2020.Census.Blocks.BLKGRP'] # Census block group num. (w/in tract)
+blkgrp_str = levels(blkgrp_geo$X2020.Census.Blocks.BLKGRP) # Convert num. to string
+FIPS = paste(tract_str, blkgrp_str, sep = '') # FIPS code for block group
+```
+
+Now let's download data from the U.S. Census' Application-Program Interface (API) directly into R:
+```{r echo=TRUE}
+url1 = 'https://ejscreen.epa.gov/mapper/ejscreenRESTbroker.aspx?namestr='
+url2 = '&geometry=&distance=&unit=9035&areatype=blockgroup&areaid='
+url3 = '&f=pjson'
+url = paste(url1, FIPS, url2, FIPS, url3, sep ='')
+ejscreen_raw <- jsonlite::fromJSON(url) # Download EJ Screen data for census block at json
+```
+
+As an example, we can visualize all the EJ Screen data that comes in national percentiles (NP) for this block group:
+```{r echo=TRUE}
+ejscreen_raw <- jsonlite::fromJSON(url) # Download EJ Screen data for census block at json
+NP_inds = grep(x = names(ejscreen_raw), pattern = 'N_P') # Extract indices of national percentiles
+# Construct data frame for visualization below
+NP_df = as.data.frame(ejscreen_raw[NP_inds]) 
+NP_names = colnames(NP_df)
+NP_vals = as.numeric(ejscreen_raw[NP_inds])
+NP_data = data.frame(Field = NP_names, Percentile = NP_vals)
+
+ggplot(data = NP_data, aes(x = Field, y = Percentile)) + geom_col() + 
+  theme(axis.text.x = element_text(angle = 90)) + ylim(0, 100)
+```
+
+We can interpret this figure using the field descriptions linked above.
