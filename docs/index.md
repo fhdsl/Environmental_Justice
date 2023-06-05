@@ -1,7 +1,7 @@
 ---
 title: "Data for Environmental Justice (d4ej)"
 subtitle: "Tiered modules for introducing environmentally and socially conscious data science"
-date: "March, 2023"
+date: "June, 2023"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
