@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data for Environmental Justice (d4ej)</title>
+  <title>Chapter 6 Activity | Data for Environmental Justice (d4ej)</title>
   <meta name="description" content="Description about Course/Book." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data for Environmental Justice (d4ej)" />
+  <meta property="og:title" content="Chapter 6 Activity | Data for Environmental Justice (d4ej)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data for Environmental Justice (d4ej)" />
+  <meta name="twitter:title" content="Chapter 6 Activity | Data for Environmental Justice (d4ej)" />
   
   <meta name="twitter:description" content="Description about Course/Book." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="audience-and-tiered-structure.html"/>
+<link rel="prev" href="introduction-1.html"/>
+<link rel="next" href="about-the-authors.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -209,18 +209,52 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Data for Environmental Justice (d4ej)</h1>
-<h2 class="subtitle"><em>Tiered modules for introducing environmentally and socially conscious data science</em></h2>
-<p class="date"><em>June, 2023</em></p>
-</div>
-<div id="about-these-modules" class="section level1 unnumbered">
-<h1>About These Modules</h1>
-<p>This is a collection of modules intended to teach students about environmental justice through the <a href="https://www.epa.gov/ejscreen">EPA’s EJ Screen tool</a>.</p>
-<p>These modules use a three-tiered system to educate across experience levels. Modules are also broken up by the intended audience: data science and/or STEM majors, social science majors, and those participating in socially engaged arts learning.</p>
-<p><img src="assets/ej_screen.png" /></p>
+<div id="activity" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Activity</h1>
+<p>Looking at the EJ Screen website, wastewater discharge is an EJ factor in many Southern California regions.</p>
+<p>We can dive into the data and look at the content of the wastewater in two different rural counties: Riverside and Imperial</p>
+<p><img src="assets/ca_wastewater.png" /></p>
+<p>We find that the chemical composition is very different! These are also counties with large amounts of agricultural run-off, but these are not accounted for in this database. The nitrate wastewater runoff in Imperial county is from the US Navy.</p>
+<p><img src="assets/imperial.png" /></p>
+<p><img src="assets/riverside.png" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="activity.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="activity.html#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> ‘TRI_table_CA2.csv’)</span>
+<span id="cb1-3"><a href="activity.html#cb1-3" aria-hidden="true" tabindex="-1"></a>county_name <span class="ot">=</span> “IMPERIAL”</span>
+<span id="cb1-4"><a href="activity.html#cb1-4" aria-hidden="true" tabindex="-1"></a>county <span class="ot">=</span> data[data<span class="sc">$</span>COUNTY_NAME <span class="sc">==</span> county_name,]</span>
+<span id="cb1-5"><a href="activity.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## What do the columns mean?</span></span>
+<span id="cb1-6"><a href="activity.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># TOTAL_PRODUCTION_RELATED_WASTE. = sum of all reports</span></span>
+<span id="cb1-7"><a href="activity.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># TOTAL_PRODUCTION_RELATED_WASTE..1 = average of all reports</span></span>
+<span id="cb1-8"><a href="activity.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># TOTAL_PRODUCTION_RELATED_WASTE..2 = count of reports</span></span>
+<span id="cb1-9"><a href="activity.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># county$TOTAL_PRODUCTION_RELATED_WASTE..5 = std of all reports</span></span>
+<span id="cb1-10"><a href="activity.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># county$TOTAL_PRODUCTION_RELATED_WASTE..6 = variance of all reports</span></span>
+<span id="cb1-11"><a href="activity.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot total by facility</span></span>
+<span id="cb1-12"><a href="activity.html#cb1-12" aria-hidden="true" tabindex="-1"></a>county1 <span class="ot">=</span> <span class="fu">aggregate</span>(<span class="at">x =</span> county<span class="sc">$</span>TOTAL_PRODUCTION_RELATED_WASTE.,                <span class="co"># Specify data column</span></span>
+<span id="cb1-13"><a href="activity.html#cb1-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">by =</span> <span class="fu">list</span>(county<span class="sc">$</span>FACILITY_NAME),              <span class="co"># Specify group indicator</span></span>
+<span id="cb1-14"><a href="activity.html#cb1-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">FUN =</span> sum)</span>
+<span id="cb1-15"><a href="activity.html#cb1-15" aria-hidden="true" tabindex="-1"></a>county1 <span class="ot">&lt;-</span> county1[<span class="fu">order</span>(county1<span class="sc">$</span>x),]</span>
+<span id="cb1-16"><a href="activity.html#cb1-16" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">ggplot</span>(<span class="at">data=</span>county1, <span class="fu">aes</span>(<span class="at">x=</span>Group<span class="fl">.1</span>, <span class="at">y=</span>x)) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="activity.html#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> ‘identity’)</span>
+<span id="cb1-18"><a href="activity.html#cb1-18" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb1-19"><a href="activity.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot total by chemical</span></span>
+<span id="cb1-20"><a href="activity.html#cb1-20" aria-hidden="true" tabindex="-1"></a>chemical <span class="ot">=</span> <span class="fu">aggregate</span>(<span class="at">x =</span> county<span class="sc">$</span>TOTAL_PRODUCTION_RELATED_WASTE.,                <span class="co"># Specify data column</span></span>
+<span id="cb1-21"><a href="activity.html#cb1-21" aria-hidden="true" tabindex="-1"></a>                    <span class="at">by =</span> <span class="fu">list</span>(county<span class="sc">$</span>CAS_CHEM_NAME),              <span class="co"># Specify group indicator</span></span>
+<span id="cb1-22"><a href="activity.html#cb1-22" aria-hidden="true" tabindex="-1"></a>                    <span class="at">FUN =</span> sum)</span>
+<span id="cb1-23"><a href="activity.html#cb1-23" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">ggplot</span>(<span class="at">data=</span>chemical, <span class="fu">aes</span>(<span class="at">x=</span>Group<span class="fl">.1</span>, <span class="at">y=</span>x)) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="activity.html#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> ‘identity’)</span>
+<span id="cb1-25"><a href="activity.html#cb1-25" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb1-26"><a href="activity.html#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot chemicals that are released into the water</span></span>
+<span id="cb1-27"><a href="activity.html#cb1-27" aria-hidden="true" tabindex="-1"></a>county_water <span class="ot">&lt;-</span> county[county<span class="sc">$</span>WATER_TOTAL_RELEASE <span class="sc">&gt;</span> <span class="dv">0</span>,]</span>
+<span id="cb1-28"><a href="activity.html#cb1-28" aria-hidden="true" tabindex="-1"></a>chemical <span class="ot">=</span> <span class="fu">aggregate</span>(<span class="at">x =</span> county_water<span class="sc">$</span>WATER_TOTAL_RELEASE,                <span class="co"># Specify data column</span></span>
+<span id="cb1-29"><a href="activity.html#cb1-29" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="fu">list</span>(county_water<span class="sc">$</span>CAS_CHEM_NAME),              <span class="co"># Specify group indicator</span></span>
+<span id="cb1-30"><a href="activity.html#cb1-30" aria-hidden="true" tabindex="-1"></a>                     <span class="at">FUN =</span> sum)</span>
+<span id="cb1-31"><a href="activity.html#cb1-31" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">ggplot</span>(<span class="at">data=</span>chemical, <span class="fu">aes</span>(<span class="at">x=</span>Group<span class="fl">.1</span>, <span class="at">y=</span>x)) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="activity.html#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> ‘identity’)</span>
+<span id="cb1-33"><a href="activity.html#cb1-33" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code></pre></div>
 
 </div>
+
+
+
 <hr>
 <center> 
   <div class="footer">
@@ -234,8 +268,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="audience-and-tiered-structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

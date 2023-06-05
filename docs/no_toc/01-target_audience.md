@@ -1,0 +1,12 @@
+
+
+
+# Audience and Tiered Structure {-}
+
+These modules are made to provide opportunities for students, especially **underserved and minority students**, at higher education facilities to explore and critically think about environmental justice data using EJScreen and other tools.   
+
+We intend for these modules to be discipline agnostic, so that students of multiple disciplines and majors can participate in environmental data science. We have also designed these modules with under-resourced instructors in mind, such as those teaching at Minority Serving Institutions, community colleges, primarily undergraduate universities, and historically women’s colleges.  
+
+In order to provide for a range of experience levels, we have created **three tiers** of educational content. The tier 1 module targets the lower division level undergraduate students, across a variety of disciplines (e.g., biology, social science).   
+
+Tiers 2 and 3 will target more advanced students, potentially junior and senior undergraduate students, graduate students or students completing a research capstone. Tiers 2 and 3 will also assume some background knowledge in data science. Finally, we have included additional follow-on learning objectives for students interested in social science disciplines or socially engaged art. We encourage instructors to gauge their students’ interests and mix objectives from the different tiers and disciplines.   

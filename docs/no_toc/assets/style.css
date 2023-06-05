@@ -98,7 +98,7 @@ h1, h2, h3, h4 {
 }
 */
 
-.section.level1 > p:first-of-type:first-letter { /*drop cap for first p beneath level 1 headers only within class .section*/
+/*.section.level1 > p:first-of-type:first-letter { /*drop cap for first p beneath level 1 headers only within class .section*/ /*
   color: #012d72;
   float: left;
   font-family: 'Abril Fatface', serif;
@@ -109,6 +109,7 @@ h1, h2, h3, h4 {
   padding-left: 3px;
   margin-bottom: 9px;
 }
+*/
 
 /* add drop cap to first paragraph that follows the first 2nd level header*/
 /*
