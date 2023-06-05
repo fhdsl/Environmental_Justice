@@ -1,0 +1,593 @@
+---
+title: "D4EJ Tutorials : Intro to R & RStudio"
+author: "Samantha Sambado"
+date: "2023-06-05"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+
+#### Welcome to Data for Enviornmental Judtice (D4EJ) mini-lessons!
+
+The purpose of these computer labs are to give you hands-on experience with the statistic the **R language** and the **RStudio environment**. This may be your first time coding or hearing about R, which is *really exciting* & will sometimes be frustrating; but that's totally normal. 
+
+
+##### Outline
+ + Background on R and RStudio
+ 
+ + Learning objectives
+ 
+ + Mini-lesson instructions
+ 
+ + Mini-lesson material
+ 
+ + Mini-lesson questions/assessment
+ 
+### Background on R and RStudio
+
+*note: much of this info came from other coding classes I have taken at UCSB that I highly recommend such as UCSB EEMB 179 with Dr. Holly Moeller & UCSB ESM 206 with Dr. Allison Horst*
+
+\newline
+
+
+**What is R and RStudio?**
+
+TLDR; R is a programming language whereas RStudio is a user-friendly platform to visualize R tasks.
+
+
+R is an object-oriented scripting language that combines:
+
++ An extensive set of functions for classical & modern **statistical data analysis & modeling**
+
++ Graphing functions for **visualizing data & model output**
+
++ **free and open source tool** to be shared with a wider internet community 
+
+\newline
+
+
+**What's the difference between .Rmd vs .html vs.R files?**
+
++ Both .Rmd and .html file types contain the same information -- code we need to run & text that describes the code. However, the .Rmd file will contain extra code which formats the .html document. We will typically start in an .Rmd file to write and execute code, however once completed with code, the .html file may be more visually appealing to read. 
+
++ R script (.R file) have less functionality as it relates to data visualization, code organization and output generation.   
+
+
+### Intro to R & RStudio "Intro"
+
+#### Learning objectives
+
+1. Become familiar with R language and RStudio environment -- at least have it **working on your personal computer**
+
+\newline
+
+
+2. **Correctly identify data types** of variables 
+
+\newline
+
+3. Observe common **data wrangling techniques** in tidyverse 
+
+\newline
+
+4. Learn some common terminology in R -- to help with asking questions
+
+
+\newline
+
+
+### Mini-lesson Instructions 
+
+### Part 1: Download R & R Studio on your computer
+
+##### A. [Download R here](https://cran.r-project.org/mirrors.html)  
+
+* Click the link and scroll down to USA & choose one of the CRAN (Comprehensive R Archive Network) mirror -- I personally chose the one in my time zone (Oregon State University).  You can technically choose any mirror you'd like, however it's suggested you always use the closest server to your location.  
+
+* Click the appropriate link depending on your operating system (Mac OS X _vs._ Windows _vs._ Linux)
+
+    + If you're a Mac user, select R-4.2.2.pkg link for the lastest version of R "Innocent and Trusting". 
+    
+    + If you're a PC user, click the "install R for the first time" link then "Download R 4.4.2 for Windows" link.
+
+\newline
+
+* Open your downloaded packages, agree to the license and continue downloading as usual. Find the R icon (blue R with a grey circle) in your application folder to confirm a successful download. 
+
+* If you already have R downloaded on your computer with an older version, the new version should automatically replace your older version. 
+
+* Let's open up R. 
+
+##### B. [Download R studio here](https://www.rstudio.com/products/rstudio/download/)
+
+* Click the link and select the left-most download button with under the "RStudio Desktop Open Source License" label. 
+
+* Click the appropriate installer tab depending on your operating system (usually either of the first two installers).
+
+* Open the installer, agree to the license and install normally. 
+
+* Find the R studio icon (white R in a blue circle; this is different from the previous 'R' icon) in your applications folder to confirm a successful download. 
+
+* Let's open up R studio. 
+
+
+### Part 2: Material for HW Assignment questions
+
+For this week only, you will **answer multiple choice questions on GauchoSpace** in lieu of uploading a PDF or .html file of your homework answers. The link to these questions can be found on WEEK 1 COMPUTER LAB MATERIALS labeled, **'Lab 1 HW Assignment Questions (answer these)'**. For **HW Assignment Lab 1 you do not need to upload any files**, you just need to read through this .html file to find the information to **answer the questions directly on GauchoSpace**. All GauchoSpace questions can be answered through material found on this .html document, **you do not need to consult any other material sources** (ie Google). 
+
+#### A. The Big Picture
+
+So much data exists in our world! With R, you have the ability to use that data to ask and answer questions. There are many ways to tell a story, but there are some general guidelines on how to build that story:
+
++ First ask yourself, what is your outcome of interest - your **dependent** variable 'y'?
+
++ Then ponder, what is influencing your outcome of interest - your **independent** variable 'x'? 
+
+
+Some questions you may have that R could theoretically solve for you:
+
++ Does soil type (**independent**) influence tree height (**dependent**)?
+
++ Does the distance from ocean (**independent**) influence rent costs (**dependent**)?
+
++ Do twitter mentions (**independent**) influence cryptocurrency value (**dependent**)?
+
+<center>
+![](./memes/meme_backstreetboys.png){width=60%}
+</center>
+
+#### B. Your type of data determines how you can shape your story
+
+##### Data types or classes
+
++ **Numerical** --> numbers, duh.
+  + *example: 1, 4.03, 7000*
+
++ **Categorical** --> characteristics, like words.
+  + *example: blue, kind, fish*
+
++ **Continuous** --> numbers can take on **any** value
+
+  + *example: height, weight, temperature*
+  
++ **Discrete** --> numbers or words can only be **certain** values
+
+  + *example: days of the week, # of kids in a class, pet type*
+  
+
++ **Factor** --> categorical grouping 
+  + *example: cereals, departments, countries*
+  
++ **Levels** --> categorical sub-groups of factors  
+  + *example: (honey bunches of oats, cheerios), (EEMB, PSTAT, ESM), (Canada, USA, Mexico)*
+
+
++ **Nominal** --> discrete units with no order
+
+  + *example: languages, countries, gender*
+  
+  
++ **Ordinal** --> discrete unites with order
+
+  + *example: months of year, levels of education, TA reviews*
+  
+
+<center>
+![](./memes/types_of_data.png){width=90%}
+</center>
+
+*image from ESM 206 taught by Dr. Allison Horst*
+
+#### C. Once you understand your story, then you can hop into data wrangling - yeehaw.
+
+##### Note
+
++ Data wrangling will require a lot of wrangling
+
+<center>
+![](./memes/realworlddata.jpg){width=60%}
+</center>
+
+\newline
+\newline
+
+\newline
+
++ Be prepared to try **a lot** of different stuff 
+
+\newline
+
+<center>
+![](./memes/debugging.jpg){width=80%}
+</center>
+
+\newline
+\newline
+
+Quick remark, there are many ways to wrangle data. Two common "philosophies" on data wrangling fall under **base-R** or **tidyverse**. **Base-R** works more with individual vectors whereas **tidyverse** (specifically the `dplyr` package) uses verb inputs. Both techniques will be used in this class because they **both achieve similar things**, however choose whatever method makes more intuitive sense to you. You can find more information about the differences on this [link](https://dplyr.tidyverse.org/articles/base.html).
+
+Okay, end of philosophical ramble. Let's get started.
+
+
+\newline
+\newline
+
+\newline
+\newline
+
+
+
+#### D. Intro to one of the best data wrangling tools -- Tidyverse
+
+\newline
+
+\newline
+
+#### Tidyverse isn't just a package, it's a collection of packages
++ *similar to how universities (ie tidyverse) are made up of colleges (ie packages) that have specific functions*
+
+\newline
+
+
+\newline
+
+
+##### Rules
+
++ Each **variable** has its own **column**
+
++ Each **observation** has its own **row**
+
++ Each **value** has its own **cell**
+
+\newline
+
+\newline
+
+<center>
+![](./memes/tidy_row:column_visual.png){width=80%}
+<center>
+
+*image from ESM 206 taught by Dr. Allison Horst*
+
+\newline
+
+\newline
+
+##### Additional Resources - check 'em out!
+*Note: Script for this workshop was largely taken from these sources*
+
+[Basic Tidyverse Concepts](https://homerhanumat.github.io/r-notes/tidyverse-concepts.html)
+
+
+[Tidyverse with animations](https://www.garrickadenbuie.com/project/tidyexplain/)
+
+
+[Tidyverse-cookbook](https://rstudio-education.github.io/tidyverse-cookbook/tidy.html)
+
+
+\newline
+\newline
+
+
+
+##### Core concepts and commands of tidyverse
+
+*Note: This code serves as a template for future homework help. You don't need to type out anything. For now, just observe the code and the associated outputs. Think of these exercises as scaffolds for your future code -- no need to reinvent the wheel for any of your homework assignments, take code from your exercises to tailor it to specific homework problems.*
+
+/newline
+
+
+
+
+##### Step 0: The set up
+
+```{r setup, include=TRUE, message = FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # this means your code will be generated alongside your output (ie data visuals/model summaries)
+knitr::opts_chunk$set(message = FALSE) # this means the message from commands won't be printed out in the .html file
+knitr::opts_chunk$set(warning = FALSE) # this means the warning from commands won't be printed out in the .html file
+
+
+### FYI, basic command line structure ###
+    # object <- function(argument)
+```
+
+
+**Step 1. Libraries needed for this workshop**
+```{r, message = FALSE}
+
+# remember, install.packages("PACAKGE") then library(PACKAGE)
+  ## Note: quotations for install.packages(), no quotations for libary()
+
+# you only need to install a package once to call the library
+
+# after you install.packages(), then hashtag # install.packages()
+
+# install.packages("tidyverse")
+library(tidyverse) # package to use tidyverse functions
+
+# install.packages("nycflights13")
+library(nycflights13) # package to call data from
+
+# install.packages("mosaicData")
+library(mosaicData) # package to call data from
+
+```
+
+**Step 2. Data needed for this assignment**
+```{r}
+## we will be using online datasets so we don't have to worry about file paths for now. There are many ways to call in data from the internet compared to when you are uploading a dataset from your own Rproj
+
+# data from github for examples
+
+# dataset 1 for examples
+data("flights", package = "nycflights13") # data built into R for exercises
+
+# dataset 2 for examples
+data(CPS85) # comes from package `mosaicData`
+
+```
+
+**Step 3. Familiarize with the basics**
+
+##### pipe operator `%>` : chains function together
+
+```{r pipe operator}
+# using pipe operator
+"hello" %>% rep(times = 4)
+
+# without pipe operator
+rep("hello", times = 4)
+```
+
+
+##### dplyr package : tool for data manipulation
+
++ a. `filter()` and `select()` for sub-setting
+
++ b. `mutate()` for transforming variables
+
++ c. `group_by()` and `summarise()` for numerical summaries
+
++ d. `fivenum()` for all 5 summaries
+
+\newline
+
+
+Exercise a: **`filter()` and `select()`** to chose optimal observations & variables
+```{r filter and select}
+
+# we will use dataset flights that track all flights from Flights that Departed NYC in 2013
+
+# always look at the specs (ie number of rows, columns) & variable data types of your dataset 
+dim(flights) # 336776 rows, 19 columns 
+
+str(flights) # shows the data type of each variable (column) in your dataset
+
+## okay let's wrangle 
+
+
+# usually filter() and select() are your first arguments when you get a dataset
+flights %>% # call tibble
+  filter(month == "6" & carrier == "UA") %>% # filter picks out rows/observations ## we're selecting observations that are month == 6 (June) AND from carrier == "UA" (United Airways)
+  select(day, arr_time, dest) # selects picks out columns/variables such as day, arr_time (air time), dest (destination)
+
+
+# let's leave out columns/variables ; use `-`
+flights %>%
+  select(-year, -month) # still have lots of columns left!
+
+
+# want to see how many observations you have left post subsetting?
+flights %>%
+  filter(dest == "LAX" & day == "1") %>% # filtering flights that only arrived in LAX on the 1st day of each month in 2013
+  nrow() # count the rows/observations left
+
+
+```
+
+Exercise b: **`mutate()`** to transform variables
+```{r mutate}
+# keep new variable name on LEFT side of `=`
+# keep function on RIGHT side of `=` that depends on the current value in the tibble
+
+
+flights %>%
+  mutate(sig_delay = arr_delay > 125) %>% # make new column/variable called sig_delay ## this will provide TRUE (> 125) /FALSE (< 125) for each observation with regards to its arr_delay (air delay) value
+  select(carrier, origin, distance, sig_delay) # select desired variables
+
+
+# You can double dip mutations within one line of code
+flights %>%
+  filter(carrier == "UA" & month == "12") %>% # select for flights on UA carrier during month 12 (december - holidays)
+  mutate(sig_delay = arr_delay > 200, 
+         sig_delayHR = arr_delay / 60) %>% # made two new variables/columns based on previous data in column 'arr_delay' (ie transformed minutes into hours)
+  ggplot(aes(x = origin, y = sig_delayHR)) + # plot these new variable values
+  geom_jitter(width = 0.2, alpha = .5) + # avoid points overlapping and making them a certain size
+  geom_boxplot(fill = 'burlywood', outlier.alpha = 0) + # using boxplot to visualize datat
+  labs(x = "Airport Origin", y = "Time Delay (hours)") + # relabel axes to make them interpretable 
+  theme_bw() + # create a clean background
+  theme(axis.title = element_text(face = "bold")) # make axis title text bold
+
+## if i had to choose an AA flight out of NYC during the december holiday month, I would probably choose JFK because it has the lowest median of time delay compared to EWR and LGA, and actually has flights leave before or exactly on time.
+  
+```
+
+Exercise c:  **`group_by()` and `summarise()`** to generate numerical summaries 
+
+```{r group_by and summarise}
+# we will use dataset CPS85 from the MosaicData package that is data from the 1985 Current Population Survey
+
+# always look at your new dataset 
+  # dim(CPS85)
+  # head(CPS85)
+
+
+# okay let's wrangle 
+
+
+CPS85 %>% # tibble that comes from the `mosaicData`
+  group_by(sex) %>% # divide observations based on their values/observations in the variable 
+  summarize(meanWage = mean(wage)) # make new tibble that has mean wage for each level of sex, you will only have two columns/variables in this tibble 1) sex and 2) meanWage
+
+
+# create more than 1 summary variable
+CPS85 %>% 
+  group_by(sex) %>% 
+  summarize(meanWage = mean(wage),
+            n = n()) # n() is the count function, very helpful for most summaries ## will count total observations for your variable meanWage
+
+
+```
+
+
+Exercise d: if you want to run all 5 summaries (which you should), use `fivenum()` function
+
+```{r other summaries}
+
+## Option 1: summaries for entire tibble (men and women included)
+CPS85 %>%
+  .$wage %>% # select one column/vector of information you want to summarize
+  fivenum() # run all 5 summary statistics
+
+
+## Option 2: summaries broken down for each sex (more appropriate of comparisons!)
+CPS85 %>%
+  group_by(sex) %>% 
+  summarise(n = n(), # count observations
+            min = fivenum(wage)[1],
+            Q1 = fivenum(wage)[2],
+            median = fivenum(wage)[3],
+            Q3 = fivenum(wage)[4],
+            max = fivenum(wage)[5])
+
+
+## Option 3: you can also compare multiple variables by group
+CPS85 %>% 
+  group_by(sector, sex) %>%  # looking at SEX and SECTOR
+  summarise(n = n(),
+            min = fivenum(wage)[1],
+            Q1 = fivenum(wage)[2],
+            median = fivenum(wage)[3],
+            Q3 = fivenum(wage)[4],
+            max = fivenum(wage)[5])
+```
+
+
+
+#### E. Common R terminology
+
+TBH, this may seem incredibly dry when you are first learning R. However, mastery of this terminology will make coding and asking for coding help **much** easier. 
+
+For example, if you are trying to find out "how to select for Guatemala within your country grouping", copying and pasting that question into Google may not give you many search hits. However, if you reframe your question as "How to select for a level within a factor in R" (where Guatamela is a level within the country factor), you will have many more responses to look through. 
+
+
+Some important glossary words for you to keep and refer to throughout the quarter: 
+
+
++ **function**: code that performs an action, and really how you do anything in R. Usually takes an input (ie argument), does something to it and return an output (ie an output, test result, plot). There are functions for importing converting and manipulating data.
+
++ **argument**: an element of a function, either essential or optional, that informs or alters how the function works. For instance, it can be a file path where the function should import from or save to : function(argument = `file = \"file-path\"`)
+
++ **package**: a bundle of functions that provide functionality to R. Many packagages come automatically with R, others you have to download for specific needs: install.packages(package = "tidyverse")
+
++ **working directory**: the folder on your computer linked to your current R session, where you import data from and save files to. 
+
++ **script**: similar to a text editor (ie Microsoft Word), this is where you write and save your code for future reference. It contains a mix of code and comments and is saved as a simple text file that you can easily share so that anyone can reproduce your work.
+
+
++ **command**: a chunk of code that performs an action, typically contains one or more functions. You run a command by pressing "Run" or using a keyboard shortcut like Cmd+Enter, Ctrl+Enter or Ctrl+R
+
++ **comment**: a bit of text in a script that starts with a hashtag (#) and isn't read as a command. Comments make your code readable to other people: use them to create sections in your script and to annotate each sep of your analysis
+
+
++ **csv file**: a type of file commonly used to import data in R, where the values of different variables are compressed together (a string, or line of values per row) and separated only by commas, R can also accept Excel (.xlsx) files, but we don't recommend it as formatting errors are harder to avoid.
+
++ **data frame**: a type of R object which consists of many rows and columns; think Excel spreadsheet. Usually the columns are different variables (ie age, color, weight, wingspan), and rows are observations of these variables (ie bird1, bird2, bird3)
+
++ **class**: the type of data contained in a variable: usually character (text/words), numeric (number), integer (whole numbers), or factor (grouping values, useful when you have multiple observation for sites or treatments in your data).
+
+
++ **object**: the building blocks of R. If R was a spoken language, functions would be verbs (action) and onjects would be nouns (the subjects of these actions). Objects are called by typing their name without quotation marks. Objects store data and can take different forms. 
+
+
+
+Definitions taken from [Stats from Scratch](https://ourcodingclub.github.io/course/stats-scratch/index.html)
+
+#### Huzzah - the end of mini-lesson material! 
+
+### Part 3: Homework questions
+
+*Question 1* If my question is, “Does distance from ocean influence rent costs?”, which would be my dependent or Y outcome of interest?
+A. Distance
+B. Rent Costs
+ANSWER: B 
+
+*Question 2* What would be considered a continuous variable?
+A. TA reviews
+B. pet type
+C. weight
+ANSWER: C
+
+*Question 3* True or False, discrete variables can only be certain values (i.e cat or dog, can’t be the Nickelodeon CatDog)?
+A. True
+B. False
+ANSWER: A
+
+*Question 4* What would be considered an ordinal, categorical variable?
+A. languages
+B. temperature
+C.  months of year
+ANSWER: C
+
+*Question 5* If I was interested in which department (ie. EEMB, PSTAT, ESM) had the highest enrollment of female graduate students, which variable would be the factor?
+A. Department
+B. EEMB, PSTAT, ESM
+ANSWER: A
+
+*Question 6* True or False, according to Tidyverse Rules from the `tidyverse` package, each variable has its own column?
+A. True
+B. False
+ANSWER: A
+
+*Question 7* True or False, according to Tidyverse Rules from the `tidyverse` package, each observation has its own row?
+A. True
+B. False
+ANSWER: A
+
+*Question 8* From Part D, Step 3, Exercise a, how many flights, in total, took off from NYC to LAX on the 1st of each month in 2013?
+A. 456
+B. 16174
+C. 522
+D. 17416
+ANSWER: C
+
+*Question 9* From Part D, Step 3, Exercise C, what was the meanWage of M (males) in the CPS85 dataset?
+A. 7.88
+B. 9.99
+ANSWER: B
+
+*Question 10* True or False, a ‘function’ can be described as the code that performs an action. It usually takes an input (ie argument), does something to it, and returns an output (ie test result, plot).
+A. True
+B. False
+ANSWER: A
+
+*Question 11* True or False, an ‘argument’ is an element of a function, that informs or alters how the function works.
+A. True
+B. False
+ANSWER: A
+
+*Question 12* True or False, a ‘package’ is a bundle of functions that performs specific tasks. 
+A. True
+B. False
+ANSWER: A
+
+*Question 13* True or False, a ‘data frame` is a type of R object which consists of many rows and columns (like an Excel spreadsheet). 
+A. True
+B. False
+ANSWER: A
+
+
